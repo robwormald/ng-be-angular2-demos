@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SquareBoxComponent } from './square-box/square-box.component';
+import { Nvd3ChartComponent } from './nvd3-chart/nvd3-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SquareBoxComponent
+    SquareBoxComponent,
+    Nvd3ChartComponent
   ],
   imports: [
     BrowserModule

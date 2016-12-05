@@ -7,18 +7,21 @@ function getRandomInt(min, max) {
 @Component({
   selector: 'app-root',
   template: `
-    <svg width="550" height="550"
-      (mousedown)="mouseDown($event)"
-      (mousemove)="mouseMove($event)"
-      (mouseup)="mouseUp($event)"
-      >
-      <svg:g
-        square-box
-        *ngFor="let box of boxes; trackBy:trackByBoxId"
-        [box]="box"
-        [selected]="box.id == currentId"
-        ></svg:g>
-    </svg>
+    <div style="float: left;">
+      <svg width="550" height="550"
+        (mousedown)="mouseDown($event)"
+        (mousemove)="mouseMove($event)"
+        (mouseup)="mouseUp($event)"
+        >
+        <svg:g
+          square-box
+          *ngFor="let box of boxes; trackBy:trackByBoxId"
+          [box]="box"
+          [selected]="box.id == currentId"
+          ></svg:g>
+      </svg>
+    </div>
+    <div style="float: left;"><nvd3-chart [positions]="boxes"></nvd3-chart></div>
   `
 })
 export class AppComponent {
@@ -30,7 +33,7 @@ export class AppComponent {
 
 
   ngOnInit() {
-    for (let i=0; i < 5000; i++) {
+    for (let i=0; i < 10; i++) {
       const id = i;
       const x = getRandomInt(0, 500);
       const y = getRandomInt(0, 500);
