@@ -22144,7 +22144,9 @@ var View_AppComponent1 = (function (_super) {
         this._SquareBoxComponent_0_3.check_box(currVal_0_0_0, throwOnChange, false);
         var currVal_0_0_1 = (this.context.$implicit.id == this.parentView.context.currentId);
         this._SquareBoxComponent_0_3.check_selected(currVal_0_0_1, throwOnChange, false);
-        this._SquareBoxComponent_0_3.ngDoCheck(this, this._el_0, throwOnChange);
+        if (this._SquareBoxComponent_0_3.ngDoCheck(this, this._el_0, throwOnChange)) {
+            this.compView_0.markAsCheckOnce();
+        }
         this.compView_0.detectChanges(throwOnChange);
     };
     View_AppComponent1.prototype.destroyInternal = function () {
@@ -22719,7 +22721,9 @@ var View_SquareBoxComponent_Host0 = (function (_super) {
         return notFoundResult;
     };
     View_SquareBoxComponent_Host0.prototype.detectChangesInternal = function (throwOnChange) {
-        this._SquareBoxComponent_0_3.ngDoCheck(this, this._el_0, throwOnChange);
+        if (this._SquareBoxComponent_0_3.ngDoCheck(this, this._el_0, throwOnChange)) {
+            this.compView_0.markAsCheckOnce();
+        }
         this.compView_0.detectChanges(throwOnChange);
     };
     View_SquareBoxComponent_Host0.prototype.destroyInternal = function () {
@@ -22736,7 +22740,7 @@ var renderType_SquareBoxComponent = __WEBPACK_IMPORTED_MODULE_3__angular_core_sr
 var View_SquareBoxComponent0 = (function (_super) {
     __extends(View_SquareBoxComponent0, _super);
     function View_SquareBoxComponent0(viewUtils, parentView, parentIndex, parentElement) {
-        _super.call(this, View_SquareBoxComponent0, renderType_SquareBoxComponent, __WEBPACK_IMPORTED_MODULE_5__angular_core_src_linker_view_type__["a" /* ViewType */].COMPONENT, viewUtils, parentView, parentIndex, parentElement, __WEBPACK_IMPORTED_MODULE_1__angular_core_src_change_detection_change_detection__["f" /* ChangeDetectorStatus */].CheckAlways);
+        _super.call(this, View_SquareBoxComponent0, renderType_SquareBoxComponent, __WEBPACK_IMPORTED_MODULE_5__angular_core_src_linker_view_type__["a" /* ViewType */].COMPONENT, viewUtils, parentView, parentIndex, parentElement, __WEBPACK_IMPORTED_MODULE_1__angular_core_src_change_detection_change_detection__["f" /* ChangeDetectorStatus */].CheckOnce);
     }
     View_SquareBoxComponent0.prototype.createInternal = function (rootSelector) {
         var parentRenderNode = this.renderer.createViewRoot(this.parentElement);
